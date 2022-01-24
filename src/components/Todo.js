@@ -5,16 +5,14 @@ function Todo() {
     
     const [text,setText] = useState('')
     const [items,setItems] = useState([])
-    const [complete,setComplete] = useState(false)       
 
     //adding items to the items array
     const addItem = () =>{
         if(!text){
 
-        }else{            
-            setItems([...items,text])  
+        }else{           
+            setItems([...items, {value: text, completed: false}]) 
             setText('')
-            console.log(items);
         }
     }
 
@@ -22,37 +20,20 @@ function Todo() {
     const deleteItem = (id) =>{
         const updatedItems = items.filter((element,index)=>{
             return index!==id
-        }            
+            }            
         )
         setItems(updatedItems)
     }
 
     //completed items 
-    const completedItem = (id) =>{
-        console.log(id);
-        setComplete(!complete)
-        // let completedItems = items.map(item=>{
-        //     console.log(item[id].complete);
-        //     if(item.id===id){
-        //         console.log(complete);
-        //         item.setComplete(!item.complete)
-        //     }
-        //     return item
-        // })
-        // setItems(completedItems)
-        // console.log(id);
-        // console.log(items[id]);
-
-        // items.map(item=>{
-        //     if(item.id===id){
-        //         item.setComplete(!complete)
-        //     }
-        // })
-
-        // console.log(complete);
-        
-        // console.log(complete);
-    }
+    const completedItem = (id) =>{    
+        setItems(items.map((item,index)=>{ 
+            if(index===id){
+               item.completed = !item.completed
+            }  
+            return item    
+            }))
+        }
 
     return <div>
         <div>
@@ -62,13 +43,13 @@ function Todo() {
                 value={text} 
                 onChange={e=>setText(e.target.value)}/>
             <button onClick={addItem}>Add Item</button>
-            <h2>{text}</h2>
         </div>
         <div>            
-            {items.map((item,index)=>{
+            {
+            items.map((item,index)=>{
                 return(
-                    <div key={index} id={index} style={{textDecoration: complete? "line-through": 'none'}} >
-                        <h2 >{item}</h2> 
+                    <div key={index} id={index} style={{textDecoration: item.completed? "line-through": 'none'}} >
+                        <h2 >{item.value}</h2> 
                         <button><i className="fas fa-edit add-btn" title="Edit"></i></button>
                         <button onClick={()=>completedItem(index)}><i className="far fa-check-double add-btn" title="Completed"></i></button>
                         <button onClick={()=>deleteItem(index)}><i className="fas fa-trash-alt add-btn" title="Delete" ></i></button>
@@ -80,3 +61,4 @@ function Todo() {
 }
 
 export default Todo;
+
