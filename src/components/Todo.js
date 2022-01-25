@@ -33,12 +33,14 @@ function Todo() {
     return <div className="main-div">
         <div className="div-first">
             <h2 className='heading'>Write Your Todo.</h2>
-            <input className='inputField' type="text" 
+            <div className='left'>
+                <input className='inputField' type="text" 
                 placeholder="Enter Your Item" 
                 value={text}
                 onChange={e=>setText(e.target.value)}
             />
-            <div className='button'>
+            </div>            
+            <div className='button right'>
                 {toggle ? <i onClick={addItem} className="submit fas fa-edit add-btn" title="Edit"></i> 
                     : <i onClick={addItem} class="submit fas fa-plus add-btn"></i>}          
             </div>

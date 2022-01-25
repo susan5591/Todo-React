@@ -20,6 +20,7 @@ body{
 }
 
 .main-div{
+    margin-top: 20px;
     text-align: center;
     border-radius: 10px;
     width: 400px;
@@ -42,9 +43,11 @@ body{
 
 input.inputField {
   position: relative;
+  
 }
 
 .inputField{
+  padding-right: 40px;
   height: 50px;
   width: 20rem;
   border-radius: 5px;
@@ -61,7 +64,7 @@ input.inputField {
   position: absolute;
   z-index: 999;
   top: 97px;
-  right: 45px;
+  right: 30px;
 }
 
 .submit{
@@ -71,7 +74,7 @@ input.inputField {
 }
 .list{
   margin: auto;
-  height: 45px;
+  height: auto;
   width: 20rem;
   border-radius: 5px;
   font-size: 1rem;
@@ -81,9 +84,12 @@ input.inputField {
 }
 .listItems{
   text-align:left;
+  width: 60%;
+  height: auto;
   padding-left: 10px;
   padding-top: 3px;
   box-sizing: inherit;
+  word-break: break-all;
 }
 .fa-trash-alt:hover {
   color: rgb(250, 9, 29);
