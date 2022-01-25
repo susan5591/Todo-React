@@ -10,8 +10,7 @@ function Todo() {
     const [itemId,setItemId] = useState(null)
 
     //adding items to the items array
-    const addItem = () =>{
-        
+    const addItem = () =>{        
         if(!text){
 
         }else if(text && toggle){
@@ -31,37 +30,6 @@ function Todo() {
             setText('')
         }
     }
-
-    //edit items
-    const editItem = (id) =>{
-        //get the id and name of the data which user clicked to edit
-        //get the toggle mode to change the submit button into edit button
-        //now update the value of the input with the new updated value to edit
-        //to pass the current element id to new state variable for reference
-        setText(items[id].value)
-        setToggle(true)  
-        setItemId(id)
-        
-    }
-
-    //delete items from the list
-    const deleteItem = (id) =>{
-        const updatedItems = items.filter((element,index)=>{
-            return index!==id
-            }            
-        )
-        setItems(updatedItems)
-    }
-
-    //completed items 
-    const completedItem = (id) =>{    
-        setItems(items.map((item,index)=>{ 
-            if(index===id){
-               item.completed = !item.completed
-            }  
-            return item    
-        }))
-    }
     return <div>
         <div>
             <h2>Write Your Todo.</h2>
@@ -74,14 +42,11 @@ function Todo() {
         </div>
         <div>            
             {
-            items.map((item,index)=>{
+            items.map((element,index)=>{
                 return(
-                    <div key={index} id={index} style={{textDecoration: item.completed? "line-through": 'none'}} >
-                        <h2 >{item.value}</h2> 
-                        <button onClick={()=>editItem(index)}><i className="fas fa-edit add-btn" title="Edit"></i></button>
-                        <button onClick={()=>completedItem(index)}><i className="far fa-check-double add-btn" title="Completed"></i></button>
-                        <button onClick={()=>deleteItem(index)}><i className="fas fa-trash-alt add-btn" title="Delete" ></i></button>
-                    </div>                              
+                        <TodoList element={element} key={index} id={index} text={text} items={items} toggle={toggle} itemId={itemId} 
+                            setText={setText} setItemId={setItemId} setItems={setItems} setToggle={setToggle}
+                        />                            
                 ) 
             })}
         </div>
