@@ -44,7 +44,7 @@ function Todo() {
             {
             items.map((element,index)=>{
                 return(
-                        <TodoList element={element} key={index} id={index} text={text} items={items} toggle={toggle} itemId={itemId} 
+                        <TodoList element={element} key={index} id={index} items={items} 
                             setText={setText} setItemId={setItemId} setItems={setItems} setToggle={setToggle}
                         />                            
                 ) 
