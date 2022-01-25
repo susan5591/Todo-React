@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .App-logo {
@@ -13,26 +15,94 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body{
+  background-color: #489197;
 }
 
-.App-link {
-  color: #61dafb;
+.main-div{
+    text-align: center;
+    border-radius: 10px;
+    width: 400px;
+    height: auto;
+    padding: 50px;
+    background-color: rgb(77, 208, 218);
+    border: 1px solid lightskyblue;
+    box-shadow: 0 4px 8px 0 rgb(66 60 66), 0 6px 20px 0 rgb(66 60 66);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.div-first{
+  position: relative;
+  width: 100%;
 }
+
+.heading{
+  font-family:'cursive';
+  font-size: 40px;
+}
+
+input.inputField {
+  position: relative;
+}
+
+.inputField{
+  height: 50px;
+  width: 20rem;
+  border-radius: 5px;
+  border-color: transparent;
+  font-size: 1.5rem;
+  background-color: rgb(114, 197, 245);
+  box-shadow:  0 6px 20px 0 rgb(66, 60, 66);
+}
+
+.button {
+  background-color: transparent;
+  border-color: transparent;
+  color: blue;
+  position: absolute;
+  z-index: 999;
+  top: 97px;
+  right: 45px;
+}
+
+.submit{
+  background-color: transparent;
+  border-color: transparent;
+  color:blue;
+}
+.list{
+  margin: auto;
+  height: 45px;
+  width: 20rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: aquamarine;
+  box-shadow:  0 6px 20px 0 rgb(66, 60, 66);
+  color: rgb(58, 53, 53);
+}
+.listItems{
+  text-align:left;
+  padding-left: 10px;
+  padding-top: 3px;
+  box-sizing: inherit;
+}
+.fa-trash-alt:hover {
+  color: rgb(250, 9, 29);
+}
+i.submit{
+  margin-left: 15px;
+  background-color: transparent;
+  border-color: transparent;
+  color:rgb(58, 58, 211);
+}
+
+.button-list {
+  background-color: transparent;
+  border-color: transparent;
+  color: rgb(58, 58, 211);
+  position: relative;
+  z-index: 803;
+  top: -46px;
+  right: -96px;
+}
+
+

@@ -30,11 +30,15 @@ function TodoList(props) {
         }))
     }
     return(
-        <div style={{textDecoration: element.completed? "line-through": 'none'}} >
-            <h2 >{element.value}</h2> 
-            <button onClick={()=>editItem(id)}><i className="fas fa-edit add-btn" title="Edit"></i></button>
-            <button onClick={()=>completedItem(id)}><i className="far fa-check-double add-btn" title="Completed"></i></button>
-            <button onClick={()=>deleteItem(id)}><i className="fas fa-trash-alt add-btn" title="Delete" ></i></button>
+        <div className='list' style={{textDecoration: element.completed? "line-through": 'none'}} >
+            <div className='left'>
+                <h2 className='listItems'>{element.value}</h2>
+            </div>
+            <div className='button-list'>
+                <i onClick={()=>editItem(id)} className=" submit fas fa-edit add-btn" title="Edit"></i>
+                <i onClick={()=>completedItem(id)} className="submit far fa-check-double add-btn" title="Completed"></i>
+                <i onClick={()=>deleteItem(id)} className="submit fas fa-trash-alt add-btn" title="Delete" ></i>
+            </div>            
         </div>                       
     ) 
 }

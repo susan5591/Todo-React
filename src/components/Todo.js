@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import Edit from './Edit';
 import TodoList from './TodoList';
+import '../App'
 
 function Todo() {
     
@@ -30,17 +30,20 @@ function Todo() {
             setText('')
         }
     }
-    return <div>
-        <div>
-            <h2>Write Your Todo.</h2>
-            <input type="text" 
+    return <div className="main-div">
+        <div className="div-first">
+            <h2 className='heading'>Write Your Todo.</h2>
+            <input className='inputField' type="text" 
                 placeholder="Enter Your Item" 
                 value={text}
                 onChange={e=>setText(e.target.value)}
             />
-            {toggle ? <button onClick={addItem}>Update Item</button> : <button onClick={addItem}>Add Item</button>}            
+            <div className='button'>
+                {toggle ? <i onClick={addItem} className="submit fas fa-edit add-btn" title="Edit"></i> 
+                    : <i onClick={addItem} class="submit fas fa-plus add-btn"></i>}          
+            </div>
         </div>
-        <div>            
+        <div className='div-second'>            
             {
             items.map((element,index)=>{
                 return(
